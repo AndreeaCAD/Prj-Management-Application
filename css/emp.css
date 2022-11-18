@@ -1,0 +1,12 @@
+h3 {
+    margin-left: 10px;
+}
+
+.prj_container {
+    display: flex;
+    margin-left: 10px;
+}
+
+.prj_label {
+    width: 100px;
+}

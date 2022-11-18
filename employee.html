@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="js/employee.js"></script>
+        <link rel="stylesheet" href="css/common.css">
+        <link rel="stylesheet" href="css/emp.css">
+        <title>Project Management Application - employee details</title>
+    </head>
+    <body onload="doStartupConfig()">
+        <div class="menu_bar">
+            <div class="img_container">
+            <img src="eagle.jpg" width="50px" height="50px">
+            </div>
+            <div class="company_title">
+                Company
+            </div>
+            <div class="menu_item">
+                <a class="menu_item_link" href="index.html">Employees</a>
+            </div>
+            <div class="menu_item">
+                <a class="menu_item_link" href="Projects.html">Projects</a>
+            </div>
+        </div>
+
+        <h3 id="emp_name"></h3>
+
+        <div class="prj_container">
+        <div class="prj_label">Project:</div>
+        <div> 
+            <select onchange="saveEmpProject()" id="sel_prj"></select>
+        </div>
+        </div>
+    </body>
+</html>

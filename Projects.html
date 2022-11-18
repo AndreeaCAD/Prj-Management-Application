@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <script src="js/projects.js"></script>
+        <link rel="stylesheet" href="css/common.css">
+        <link rel="stylesheet" href="css/index.css">
+        <title>Project Management Application - projects</title>
+    </head>
+
+    <body onload="doStartupConfig()">
+
+        <div class="add_container" id="add_container">
+            <button class="addEmpButton" onclick="displayAddForm(true)">Add New Project</button>
+        </div>
+        <div class="add_form_container" id="add_form_container">
+            <form id="add_form">
+                <div class="el_container">
+                    <div class="el_label">
+                        Prj name:
+                    </div>
+                    <input type="text" name="name" id="name" onkeyup="checkName()">
+                    <div class="error_txt" id="name_err">You must add a project name</div>
+                </div>
+                <div class="el_container">
+                    <div class="el_label">
+                        Start date:
+                    </div>
+                    <input type="text" name="start_date" id="start_date" placeholder="YYYY-MM-DD" onkeyup="checkStartDate()">
+                    <div class="error_txt" id="start_date_err">You must use the suggested format</div>
+                </div>
+                <div class="el_container">
+                    <div class="el_label">
+                        Duration:
+                    </div>
+                    <input type="text" name="duration" id="duration" placeholder="1-36" onkeyup="checkElement('duration')">
+                    <div class="error_txt" id="duration_err">You must add duration between 1 and 36</div>
+                </div>
+                <div class="el_container">
+                    <div class="el_label">
+                        Personal:
+                    </div>
+                    <input type="text" name="no_pers" id="no_pers" placeholder="1-10" onkeyup="checkElement('no_pers')">
+                    <div class="error_txt" id="no_pers_err">You must add the number of necessary persons between 1 and 10</div>
+                </div>
+                <div>
+                    <button class="cancelButton" onclick="cancelAddForm()" type="button">Cancel</button>
+                    <button class="addEmpButton" onclick="addNewProject()" type="button" disabled id="add_button">Add</button>
+                    <button class="addEmpButton saveEditButton" onclick="saveEditProject()" type="button" disabled id="edit_button">Edit</button>
+                    <button type="submit" style="display: none;">Submit</button>
+                </div>
+            </form>
+        </div>
+        <div id="no_emp_container" class="no_emp_container">
+            No projects saved yet.
+        </div>
+
+        <div class="table_container" id="table_container">
+            <table id="projects_table" cellspacing="0" cellpadding="7"></table>
+        </div>
+    </body>
+</html>
